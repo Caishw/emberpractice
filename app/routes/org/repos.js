@@ -4,7 +4,6 @@ export default Route.extend({
 
   model(params){
     let orgObj = this.modelFor('org');
-    console.log(orgObj);
     let org = this.modelFor('org').login;
     //console.log(org);
     return $.get(`https://api.github.com/orgs/${org}/repos`);
