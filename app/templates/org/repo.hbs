@@ -1,10 +1,12 @@
-<h5>Cucumber</h5>
-<ul class=repo-nav>
-<li class=nav-style>
-{{link-to 'ISSUES' 'org.repo.issues'}}
-</li>
-<li class=nav-style>
-{{link-to 'CONTRIBUTORS' 'org.repo.contributors'}}
-</li>
-</ul>
+<h2 class=repo-name>{{model.name}}</h2>
+  <ul class=repo-nav>
+    {{#if model.has_issues}}
+      <li class=nav-style>
+      {{link-to 'ISSUES' 'org.repo.issues'}}
+      </li>
+    {{/if}}
+    <li class=nav-style>
+    {{link-to 'CONTRIBUTORS' 'org.repo.contributors'}}
+    </li>
+  </ul>
 {{outlet}}

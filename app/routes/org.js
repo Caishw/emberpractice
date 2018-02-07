@@ -11,5 +11,13 @@ export default Route.extend({
       var obj = this.get('authentication.records');
       this.get('authentication.records').addObject({id:value});
     }
+  },
+  model(params){
+    return $.get(`https://api.github.com/orgs/${params.id}`).
+    then(rawOrg => {
+      rawOrg.oldID=rawOrg.id;
+      rawOrg.id = rawOrg.name;
+      return rawOrg;
+    });
   }
 });

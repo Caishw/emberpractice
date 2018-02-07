@@ -1,3 +1,5 @@
-<p>Issues</p>
-
+<!-- <p>Issues</p> -->
+{{#each model as |issue|}}
+<li> {{issue.title}} </li>
+{{/each}}
 {{outlet}}

@@ -2,8 +2,8 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   favorites:Ember.inject.service(),
-  model:function(){
-    return [
+  model:function(params){
+   return [
       {id: 'emberjs'},
       {id: 'ember-cli'},
       {id: 'microsoft'},
