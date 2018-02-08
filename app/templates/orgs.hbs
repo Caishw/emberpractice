@@ -1,12 +1,15 @@
 <h1>My favourite orgs</h1>
 
 <ul>
-	{{#each model as |cont|}}
 
-	<li>
-		<!--<span {{action 'addToFavorites' cont}}> [Fav] </span>-->
+	{{#each model as |cont|}}
+	{{github-org
+		org=cont
+	  on-fav-clicked='addToFavorites'}}
+	<!-- <li>
+		<span {{action 'addToFavorites' cont}}> [Fav] </span>
 		{{link-to cont.id 'org.repos' cont.id}}
-	</li>
+	</li> -->
 
 	{{/each}}
 </ul>

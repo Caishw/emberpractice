@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   favorites:Ember.inject.service(),
+
   model:function(params){
    return [
       {id: 'emberjs'},
@@ -13,8 +14,9 @@ export default Route.extend({
     ]
   },
   actions:{
-    addToFavorites:function(org){
+   addToFavorites:function(org){
       let fav = this.get('favorites').favoriteItems(org);
     }
   }
+
 });
