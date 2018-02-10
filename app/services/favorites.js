@@ -1,10 +1,14 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  favorites: [],
+  items: [],
 
   favoriteItems(fav){
-    this.get('favorites').addObject(fav);
-    console.log(this.get('favorites').map(x => x.id).join(','));
+    this.get('items').addObject(fav);
+    console.log(this.get('items').map(x => x.id).join(','));
+  },
+  unfavoriteItems(fav){
+    this.get('items').removeObject(fav);
+    console.log(this.get('items').map(x => x.id).join(','));
   }
 });

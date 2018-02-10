@@ -15,7 +15,13 @@ export default Route.extend({
   },
   actions:{
    addToFavorites:function(org){
-      let fav = this.get('favorites').favoriteItems(org);
+     if(this.get('favorites.items').indexOf(org) < 0)
+      {
+        let fav = this.get('favorites').favoriteItems(org);
+      }
+      else {
+        let fav = this.get('favorites').unfavoriteItems(org);
+      }
     }
   }
 

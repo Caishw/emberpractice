@@ -1,5 +1,8 @@
 <!-- {{ log org}} -->
-<span {{action 'favClicked'}}> [Fav] </span>
+<span {{action 'favClicked'}}>
+[
+{{unless isFavorited 'Fav' 'Unfav' }}
+] </span>
 {{link-to org.id 'org.repos' org.id}}
 
 
