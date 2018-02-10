@@ -5,6 +5,7 @@ import Ember from 'ember';
 export default Component.extend({
   favorites:Ember.inject.service(),
   isFavorited : isInArray('org','favorites.items'),
+  classNames:['github-org'],
   tagName:'li',
   actions:{
     favClicked:function(){

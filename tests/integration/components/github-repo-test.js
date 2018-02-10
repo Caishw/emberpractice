@@ -8,17 +8,24 @@ moduleForComponent('github-repo', 'Integration | Component | github repo', {
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
+  const repo = Ember.Object.create(
+    {
+      forks_count : 0,
+      watchers_count : 45,
+      name : 'repop'
+    }
+  );
+  this.set('repo', repo);
+  this.render(hbs`{{github-repo repo=repo}}`);
 
-  this.render(hbs`{{github-repo}}`);
-
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), '( Fork:   Watchers: )');
 
   // Template block usage:
   this.render(hbs`
-    {{#github-repo}}
+    {{#github-repo repo=repo}}
       template block text
     {{/github-repo}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), '( Fork:   Watchers: )');
 });
